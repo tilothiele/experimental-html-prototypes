@@ -1,0 +1,74 @@
+
+@import url(https://fonts.googleapis.com/css?family=Work+Sans);
+@import url(https://fonts.googleapis.com/css?family=Fredericka+the+Great);
+
+$logo-braun: #3d1b05;
+$logo-tuerkis: #51c6db;
+
+body {
+	font-family: 'Work Sans', sans-serif;
+}
+
+#schreibtisch {
+	background-image: url(img/Foto_schoenwasserwerk_HOME_1736x925pix.jpg);
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat !important;
+	background-color: #000000 !important;
+	color: #ffffff;
+	height: 925px;
+	width: 100%;
+	text-align: center;
+	padding-top: 300px;
+	h1 {
+		font-family: 'Fredericka the Great', normal;	
+		font-size: 7em;
+	}
+	p {
+		font-size: 2em;	
+		margin-bottom: 7px;
+	}
+}
+
+.navbar-brand {
+    padding-left: 50px;
+    padding-top: 15px;
+    height: 74px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: $logo-braun;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 3px;
+}
+
+#sww-navbar-collapse-1 {
+	padding-top: 20px;
+}
+
+#main-footer {
+	background-color: $logo-braun;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+
+#main-footer div div {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	a {
+		color: #ffffff;
+	}
+}
+
+#footer-bottom {
+	height: 24px;
+	background-image: url(img/logo-leiste-175x24.png);
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
