@@ -7,19 +7,198 @@ block navsetting
 	- aktiv = 'startseite';
 
 block content
-	div(class='jumbotron', id='schreibtisch')
+	div(class=['jumbotron', 'gerade'], id='schreibtisch')
 		h1 schön und gut.
 		p Logos und Corporate Design für kleine Unternehmen 
 		p mit großem Anspruch. Sympathisch, klar und aussagekräftig.
 		p Vermitteln Sie Qualität und Kompetenz.
 			
-	div(class='jumbotron', id='logos')
+	div(class=['jumbotron', 'gerade'], id='logos')
 		h1 Logos.
-		p Das visuelle Herz jedes Unternehmens, die Basis jeden Corporate Designs.
+		p Das visuelle HERZ jedes Unternehmens, die Basis jeden Corporate Designs.
+			br
 			| Individuell und passend, mit hohem Wiedererkennungswert.
 		div.row
 			each val in ['dr-hemstege.png', 'barbara-bismark.png', 'maedchenklamotte.png']
 				div(class=['col-xs-6', 'col-md-3'])
-					a(href='#', class='thumbnail')
+					a(href='#')
 						img(src="img/logo-beispiel/"+val)
-		button(type="button", class=["btn", "btn-default"]) Mehr Logos ansehen
+		a(href="schoenwasserwerk-logos.html", class=["btn", "btn-lg", "btn-default"]) Mehr Logos ansehen
+
+	div(class=['jumbotron', 'ungerade'], id='corporate-design')
+		h1 Corporate Design.
+		p Ein starkes einheitliches Erscheinungsbild für die positive Wahrnehmung und
+			br
+			| professionelle Außenwirkung des Unternehmens.
+			br
+			| Klares und ansprechendes Design, aussagekräftige Inhalte.
+		div.row
+			each val in ['Kunde 1', 'Kunde 2', 'Kunde 3', 'Kunde 4', 'Kunde 5', 'Kunde 6']
+				div(class=['col-xs-6', 'col-md-4'])
+					div.kundeninfo
+						img(src='img/kunden-bild-451x299.png')
+						h2= val
+						p Ein netter und sympathischer Satz
+							br
+							| zum Kunden oder Projekt, ich sach
+							br
+							| nur: Storytelling :-) Noch ist es
+							br
+							| Blindtext, aber das ändert sich.
+
+	div(class=['jumbotron', 'gerade'], id='mehr')
+		h1 rundum gut.
+		p Es hat lange gedauert, bis ich begriffen habe, was es bedeutet, ein blinder Text zu sein:
+			br
+			| Stephanie Kessler, Grafik-Designerin, flexibles Team statt starre Strukturen. In Hamburg Altona Ottsensen.
+			br
+			| Oft wird man gar nicht erst gelesen.
+		div.row
+			each val in ['Beratung', 'Konzept', 'Design', 'Umsetzung']
+				div(class=['col-xs-6', 'col-md-3'])
+					img(src='img/messer-und-gabel-193x192.png')
+					h2= val
+					p Blindtext hier ein paar Zeilen.
+						br
+						| Da finden sich knackige und
+						br
+						| sympathische und verständli-
+						br
+						| che Worte. Sicher auch noch
+						br
+						| ein zweiter Satz, soviel Platz
+						br
+						| und Zeit sollte sein.
+
+	div(class=['jumbotron', 'ungerade'], id='abisz')
+		h1 Von A bis Z.
+		p Wir machen alles was Sie wollen. Na ja, jedenfalls ziemlich viel.
+		div.row
+			div(class=['col-xs-6', 'col-md-3', 'textaufzaehlung'])
+				h2 Basisdesign
+				ul
+					li Logo
+					li Grafiken / Icons
+					li Corporate Design-Richtlinien
+					li Fotos
+					li Illustrationen
+				h2 Geschäftsausstattung
+				ul
+					li Visitenkarten
+					li Briefbogen
+					li Kurzbrief / Notizzettel
+					li Formulare: Auftrag,
+					li Lieferschein, Rechnung
+					li Dokumentvorlagen:
+					li Word, Excel, PowerPoint
+					li Briefumschläge
+					li Präsentations-/Pressemappe
+					li Aufkleber, Etiketten
+					li Urkunden
+					li Quittungen
+					li Eintrittskarte / Abholschein
+					li Bonuskarte / -heft
+					li Mitgliedsausweis, Kundenkarte
+					li Gutschein
+					li Stempel, Frankierstempel
+					li Blöcke
+					li Haftnotizen
+					li Notizbuch
+					li Ringordner
+					li Multimedia CD / DVD-Cover
+			div(class=['col-xs-6', 'col-md-3', 'textaufzaehlung'])
+				h2 Betriebsausstattung
+				ul
+					li Gebäudebeschriftung
+					li Schaufensterbeklebung
+					li Firmenschilder innen, außen
+					li Fuhrpark- / KFZ-Beschriftung
+					li Verpackungsmaterial
+					li Produktverpackungen
+					li Bedienungsanleitungen
+					li Wartungsaufkleber
+					li Warenanhänger,
+					li Produktaufkleber
+					li Personalkleidung
+					li Namensschilder
+					li Interne Kommunikationsmittel
+					li Messeauftritt: Wand, Theke,
+					li Faltzelt, ...
+					li Aufsteller 
+					li Fahnen, Beach-Flags
+					li Roll-up-Banner / Displays
+					li Bautafeln / Planen
+					li Fußmatten
+					li Liegestühle
+					li Zahlteller
+			div(class=['col-xs-6', 'col-md-3', 'textaufzaehlung'])
+				h2 Printmedien
+				ul
+					li Gruß-/Einladungskarte
+					li Produktkatalog
+					li Preislisten
+					li Verkaufsunterlagen
+					li Prospekte, Broschüren
+					li Karte / Flyer 
+					li Weihnachts- / Neujahrskarte
+					li Imagebroschüre
+					li Geschäftsbericht
+					li Presseinformationen
+					li Plakate
+					li Kunden- / Mitarbeitermagazin
+					li Produkt-, Image-, Verkaufs-
+					li anzeigen
+					li Werbung auf Taxen, Bussen
+				h2 Digitale Medien / Online
+				ul
+					li Webdesign
+					li Website-Programmierung
+					li Banner für Facebook,
+					li Google+, Twitter, Linkedin
+					li E-Mail-Signatur
+					li Interaktives PDF-Formular
+					li mit ausfüllbaren Schaltflächen
+					li Bildschirmhintergrund
+					li Bildschirmschoner
+					li Firmenpräsentation
+					li Produktpräsentation
+			div(class=['col-xs-6', 'col-md-3', 'textaufzaehlung'])
+				h2 Werbemittel
+				ul
+					li T-Shirts
+					li Caps
+					li Kugelschreiber
+					li Mousepads
+					li Lanyards / Schlüsselband
+					li Tassen / Becher
+					li Schreibblöcke
+					li Klarsichthüllen
+					li Mappen
+					li Papierclips / Pins
+					li Feuerzeuge / Streichhölzer
+					li Getränkedosen
+					li Werkzeuge
+					li Kalender
+					li USB-Stick
+					li Trage-/ Umhängetaschen 
+					li Bierdeckel 
+					li Mobile Ladestation / Power-
+					li bank
+					li Bonbons, Fruchtgummis,
+					li Traubenzucker, Schokolade, ...
+					li Bierdeckel 
+					li Buttons 
+					li Servietten
+					li Luftballons
+				h2 Oh, Sie brauchen noch etwas anderes? Rufen Sie einfach an!
+
+	div(class=['jumbotron', 'gerade'], id='mehr')
+		h1 schönwasserwerk. schön und gut.
+		p Es hat lange gedauert, bis ich begriffen habe, was es bedeutet, ein blinder Text zu sein:
+			br
+			| Stephanie Kessler, Grafik-Designerin, flexibles Team statt starre Strukturen. In Hamburg Altona Ottsensen.
+			br
+			| Oft wird man gar nicht erst gelesen.
+		a(href="schoenwasserwerk-ueber.html", class=["btn", "btn-lg", "btn-default"]) Mehr über Schönwasserwerk erfahren
+
+

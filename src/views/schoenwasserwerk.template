@@ -7,15 +7,19 @@ head
 	mata(http-equiv='X-UA-Compatible', content='IE=edge')
 	link(href="css/bootstrap.min.css", rel="stylesheet")
 	link(href="schoenwasserwerk.css", rel="stylesheet")
-      
+
 body
 	block navsetting
 		- aktiv = '';
 	nav(class=['navbar', 'navbar-default', 'navbar-fixed-top'] id="top-navbar")
-		div(class='container-fluid', id='top-navbar-inner')
+		div(class='container', id='top-navbar-inner')
 			div.navbar-header
 				a(class='navbar-brand', href='schoenwasserwerk-startseite.html')
 					img(alt='schönwasserwerk', src='img/schoenwasser_2016_rgb.png')
+			button(class='navbar-toggle', data-toggle='collapse' data-target='#sww-navbar-collapse-1')
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
 			div(class=["collapse", "navbar-collapse"], id="sww-navbar-collapse-1")
 				ul(class=["nav", "navbar-nav", "navbar-right"])
 					each val in [["Büro", "buero"], ["Logos", "logos"], ["Corporate Design", "corporate-design"], ["Über", "ueber"], ["Kontakt", "kontakt"]]
@@ -36,7 +40,7 @@ body
 					| Stephanie Kessler <br/>
 					| Rolandswoort 11
 					| 22763 Hamburg
-					p 
+					p
 					| Tel. 040 - 55 432 423 <br/>
 					| Fax 040 - 55 432 422 <br/>
 					| mail@schoenwasserwerk.de <br/>
