@@ -1,41 +1,32 @@
 doctype transitional
 html(lang="de")
 head
-	title Schönwasserwerk Layout
+	block title
+		title Schönwasserwerk Layout
 	meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8")
 	mata(http-equiv='X-UA-Compatible', content='IE=edge')
 	link(href="css/bootstrap.min.css", rel="stylesheet")
 	link(href="schoenwasserwerk.css", rel="stylesheet")
       
 body
+	block navsetting
+		- aktiv = '';
 	nav(class=['navbar', 'navbar-default', 'navbar-fixed-top'] id="top-navbar")
 		div(class='container-fluid', id='top-navbar-inner')
 			div.navbar-header
-				a(class='navbar-brand', href='#')
+				a(class='navbar-brand', href='schoenwasserwerk-startseite.html')
 					img(alt='schönwasserwerk', src='img/schoenwasser_2016_rgb.png')
 			div(class=["collapse", "navbar-collapse"], id="sww-navbar-collapse-1")
 				ul(class=["nav", "navbar-nav", "navbar-right"])
-					each val in ["Büro", "Logos", "Corporate Design", "Über", "Kontakt"]
+					each val in [["Büro", "buero"], ["Logos", "logos"], ["Corporate Design", "corporate-design"], ["Über", "ueber"], ["Kontakt", "kontakt"]]
 						li
-							a(href="#")= val
-	
-	div(class='jumbotron', id='schreibtisch')
-		h1 schön und gut.
-		p Logos und Corporate Design für kleine Unternehmen 
-		p mit großem Anspruch. Sympathisch, klar und aussagekräftig.
-		p Vermitteln Sie Qualität und Kompetenz.
-			
-	div(class='jumbotron', id='logos')
-		h1 Logos.
-		p Das visuelle Herz jedes Unternehmens, die Basis jeden Corporate Designs.
-			| Individuell und passend, mit hohem Wiedererkennungswert.
-		div.row
-			each val in ['dr-hemstege.png', 'barbara-bismark.png', 'maedchenklamotte.png']
-				div(class=['col-xs-6', 'col-md-3'])
-					a(href='#', class='thumbnail')
-						img(src="img/logo-beispiel/"+val)
-		button(type="button", class=["btn", "btn-default"]) Mehr Logos ansehen
-		
+							a(href="schoenwasserwerk-"+val[1]+".html")= val[0]
+							- aktivClass = val[1]==aktiv ? " aktiv" : "";
+							div(class='menue-balken'+aktivClass)
+
+	block content
+		div.container
+
 	footer(id='main-footer')
 		div.container
 			div.row
@@ -53,7 +44,7 @@ body
 				div.col-md-4
 					a(href='#') XING Button
 				div.col-md-4
-					a(href='#') Impressum
+					a(href='schoenwasserwerk-impressum.html') Impressum
 					
 		div(class='container', id='footer-bottom')
 			

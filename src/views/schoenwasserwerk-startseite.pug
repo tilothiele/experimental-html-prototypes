@@ -1,0 +1,25 @@
+extends ./schoenwasserwerk.template
+
+block title
+	title Schönwasserwerk - Startseite
+
+block navsetting
+	- aktiv = 'startseite';
+
+block content
+	div(class='jumbotron', id='schreibtisch')
+		h1 schön und gut.
+		p Logos und Corporate Design für kleine Unternehmen 
+		p mit großem Anspruch. Sympathisch, klar und aussagekräftig.
+		p Vermitteln Sie Qualität und Kompetenz.
+			
+	div(class='jumbotron', id='logos')
+		h1 Logos.
+		p Das visuelle Herz jedes Unternehmens, die Basis jeden Corporate Designs.
+			| Individuell und passend, mit hohem Wiedererkennungswert.
+		div.row
+			each val in ['dr-hemstege.png', 'barbara-bismark.png', 'maedchenklamotte.png']
+				div(class=['col-xs-6', 'col-md-3'])
+					a(href='#', class='thumbnail')
+						img(src="img/logo-beispiel/"+val)
+		button(type="button", class=["btn", "btn-default"]) Mehr Logos ansehen
