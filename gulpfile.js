@@ -3,7 +3,48 @@ var pug = require('gulp-pug');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 var convertEncoding = require('gulp-convert-encoding');
- 
+var ftp = require('vinyl-ftp');
+var fs = require('fs');
+var gutil = require( 'gulp-util' );
+
+/** Configuration **/
+// Funktioniert bei hamburg.de leider nicht, da dort nur ACTIVE mode unterstützt wird. Das kann der node-ftp client aber nicht.
+var user = '';
+var password = ''; 
+var host = 'ftp.mein.hamburg.de';  
+var port = 21;  
+var localFilesGlob = ['./**/*.html', './**/*.css', './**/*.js'];
+var remoteFolder = '/public_html/schoenwasserwerk1'
+
+
+// helper function to build an FTP connection based on our configuration
+function getFtpConnection() {  
+    return ftp.create({
+        host: host,
+        port: port,
+        user: user,
+        password: password,
+        parallel: 5,
+        log: gutil.log
+    });
+}
+
+/**
+ * Deploy task.
+ * Copies the new files to the server
+ *
+ * Usage: `FTP_USER=someuser FTP_PWD=somepwd gulp ftp-deploy`
+ */
+gulp.task('ftp-deploy', function() {
+
+    var conn = getFtpConnection();
+
+    return gulp.src(localFilesGlob, { base: './dest', buffer: false })
+        .pipe( conn.newer( remoteFolder ) ) // only upload newer files 
+        .pipe( conn.dest( remoteFolder ) )
+    ;
+});
+
 gulp.task('styles', function(){
   return gulp.src('src/sass/*.scss')
     .pipe(sass())

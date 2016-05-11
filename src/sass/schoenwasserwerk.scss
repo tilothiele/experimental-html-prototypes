@@ -11,7 +11,7 @@ body {
 
 #schreibtisch {
 	background-image: url(img/Foto_schoenwasserwerk_HOME_1736x925pix.jpg);
-	background-position: center top;
+	background-position: center 75px;
 	background-size: cover;
 	background-repeat: no-repeat !important;
 	background-color: #000000 !important;
@@ -19,7 +19,7 @@ body {
 	height: 925px;
 	width: 100%;
 	text-align: center;
-	padding-top: 300px;
+	padding-top: 335px;
 	h1 {
 		font-family: 'Fredericka the Great', normal;	
 		font-size: 7em;
@@ -28,6 +28,21 @@ body {
 		font-size: 2em;	
 		margin-bottom: 7px;
 	}
+}
+
+div {
+    .navbar-fixed-top ~ & {
+	padding-top: 90px;
+    }
+}
+
+.menue-balken {
+	height: 10px;
+	width: 100%;
+}
+
+.menue-balken.aktiv {
+	background-color: $logo-tuerkis;
 }
 
 .navbar-brand {
@@ -46,6 +61,10 @@ body {
     padding-bottom: 3px;
 }
 
+.nav {
+	margin-top: 7px;
+}
+
 #sww-navbar-collapse-1 {
 	padding-top: 20px;
 }
@@ -54,6 +73,7 @@ body {
 	background-color: $logo-braun;
 	color: #ffffff;
 	font-weight: bold;
+	margin-top: 35px;
 }
 
 
