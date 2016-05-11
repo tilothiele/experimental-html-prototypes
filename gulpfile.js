@@ -5,7 +5,8 @@ var sass = require('gulp-sass');
 var convertEncoding = require('gulp-convert-encoding');
 var ftp = require('vinyl-ftp');
 var fs = require('fs');
-var gutil = require( 'gulp-util' );
+var gutil = require('gulp-util' );
+var watch = require('gulp-watch');
 
 /** Configuration **/
 // Funktioniert bei hamburg.de leider nicht, da dort nur ACTIVE mode unterstützt wird. Das kann der node-ftp client aber nicht.
@@ -47,6 +48,7 @@ gulp.task('ftp-deploy', function() {
 
 gulp.task('styles', function(){
   return gulp.src('src/sass/*.scss')
+    .pipe(watch('src/sass/*.scss'))
     .pipe(sass())
     .pipe(gulp.dest('dest'))
 });
@@ -59,6 +61,7 @@ gulp.task('views', function build() {
     }
   };
   return gulp.src('src/views/**.pug')
+    .pipe(watch('src/views/**.pug'))
 //    .pipe(convertEncoding({from: 'utf-8', to: 'iso-8859-1'}))
     .pipe(pug(options))
     .pipe(gulp.dest('dest'));
@@ -80,5 +83,5 @@ gulp.task('copy3', function () {
 });
 
 gulp.task('default', function(callback) {
-  runSequence(['views', 'styles'], 'copy1', 'copy2', 'copy3', callback);
+  runSequence('copy1', 'copy2', 'copy3', ['views', 'styles'], callback);
 });
