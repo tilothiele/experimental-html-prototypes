@@ -4,9 +4,56 @@
 
 $logo-braun: #3d1b05;
 $logo-tuerkis: #51c6db;
+$hintergrund-hellblau: #f1f7fa;
 
 body {
 	font-family: 'Work Sans', sans-serif;
+}
+
+.jumbotron {
+	background-color: inherit;
+	text-align: center;
+	color: $logo-braun;
+	h1 {
+		font-weight: bold;
+	}
+	h2 {
+		font-weight: bold;
+		color: $logo-tuerkis;
+	}
+	.row {
+		padding-top: 15px;
+		padding-bottom: 40px;
+	}
+}
+
+.jumbotron.ungerade {
+	background-color: $hintergrund-hellblau;
+	h2 {
+		color: inherit;
+	}
+}
+
+.kundeninfo {
+	background-color: #ffffff;
+	border: 20px;
+}
+
+.textaufzaehlung {
+	text-align: left;
+	li {
+		font-size: 21px;
+		font-weight: 200;
+	}
+}
+
+// Für den Button "Mehr Logos"
+.btn-group-lg > .btn, .btn-lg {
+	border-radius: 25px;
+	border-color: $logo-braun;
+	color: $logo-braun;
+	font-size: 22px;
+	padding: 10px 26px;
 }
 
 #schreibtisch {
@@ -21,11 +68,12 @@ body {
 	text-align: center;
 	padding-top: 335px;
 	h1 {
-		font-family: 'Fredericka the Great', normal;	
+		font-family: 'Fredericka the Great', normal;
 		font-size: 7em;
+		font-weight: normal;
 	}
 	p {
-		font-size: 2em;	
+		font-size: 2em;
 		margin-bottom: 7px;
 	}
 }
