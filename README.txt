@@ -14,3 +14,4 @@ npm install --save-dev run-sequence
 npm install --save-dev gulp gulp-sass
 npm install --save-dev gulp-jquery
 npm install --save-dev gulp-convert-encoding
+npm install --save-dev vinyl-ftp
