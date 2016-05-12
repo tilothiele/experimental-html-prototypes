@@ -6,6 +6,14 @@ $logo-braun: #3d1b05;
 $logo-tuerkis: #51c6db;
 $hintergrund-hellblau: #f1f7fa;
 
+@mixin bordered-button($color, $borderRadius, $fontSize, $padding) {
+	border-radius: $borderRadius;
+	border-color: $color;
+	color: $color;
+	font-size: $fontSize;
+	padding: $padding;
+}
+
 body {
 	font-family: 'Work Sans', sans-serif;
 }
@@ -25,12 +33,14 @@ body {
 		padding-top: 15px;
 		padding-bottom: 40px;
 	}
-}
-
-.jumbotron.ungerade {
-	background-color: $hintergrund-hellblau;
-	h2 {
-		color: inherit;
+	.btn-lg {
+		@include bordered-button($logo-braun, 25px, 22px, 10px 26px);
+	}
+	&.ungerade {
+		background-color: $hintergrund-hellblau;
+		h2 {
+			color: inherit;
+		}
 	}
 }
 
@@ -45,15 +55,6 @@ body {
 		font-size: 21px;
 		font-weight: 200;
 	}
-}
-
-// Für den Button "Mehr Logos"
-.btn-group-lg > .btn, .btn-lg {
-	border-radius: 25px;
-	border-color: $logo-braun;
-	color: $logo-braun;
-	font-size: 22px;
-	padding: 10px 26px;
 }
 
 #schreibtisch {

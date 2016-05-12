@@ -7,13 +7,13 @@ block navsetting
 	- aktiv = 'startseite';
 
 block content
-	div(class=['jumbotron', 'gerade'], id='schreibtisch')
+	div(class=['jumbotron'], id='schreibtisch')
 		h1 schön und gut.
 		p Logos und Corporate Design für kleine Unternehmen 
 		p mit großem Anspruch. Sympathisch, klar und aussagekräftig.
 		p Vermitteln Sie Qualität und Kompetenz.
 			
-	div(class=['jumbotron', 'gerade'], id='logos')
+	div(class=['jumbotron'], id='logos')
 		h1 Logos.
 		p Das visuelle HERZ jedes Unternehmens, die Basis jeden Corporate Designs.
 			br
@@ -25,7 +25,7 @@ block content
 						img(src="img/logo-beispiel/"+val)
 		a(href="schoenwasserwerk-logos.html", class=["btn", "btn-lg", "btn-default"]) Mehr Logos ansehen
 
-	div(class=['jumbotron', 'ungerade'], id='corporate-design')
+	div(class=['jumbotron'], id='corporate-design')
 		h1 Corporate Design.
 		p Ein starkes einheitliches Erscheinungsbild für die positive Wahrnehmung und
 			br
@@ -46,7 +46,7 @@ block content
 							br
 							| Blindtext, aber das ändert sich.
 
-	div(class=['jumbotron', 'gerade'], id='mehr')
+	div(class=['jumbotron'], id='mehr')
 		h1 rundum gut.
 		p Es hat lange gedauert, bis ich begriffen habe, was es bedeutet, ein blinder Text zu sein:
 			br
@@ -70,7 +70,7 @@ block content
 						br
 						| und Zeit sollte sein.
 
-	div(class=['jumbotron', 'ungerade'], id='abisz')
+	div(class=['jumbotron'], id='abisz')
 		h1 Von A bis Z.
 		p Wir machen alles was Sie wollen. Na ja, jedenfalls ziemlich viel.
 		div.row
@@ -192,7 +192,7 @@ block content
 					li Luftballons
 				h2 Oh, Sie brauchen noch etwas anderes? Rufen Sie einfach an!
 
-	div(class=['jumbotron', 'gerade'], id='mehr')
+	div(class=['jumbotron'], id='mehr')
 		h1 schönwasserwerk. schön und gut.
 		p Es hat lange gedauert, bis ich begriffen habe, was es bedeutet, ein blinder Text zu sein:
 			br
@@ -201,4 +201,10 @@ block content
 			| Oft wird man gar nicht erst gelesen.
 		a(href="schoenwasserwerk-ueber.html", class=["btn", "btn-lg", "btn-default"]) Mehr über Schönwasserwerk erfahren
 
-
+block final-block
+	script.
+		var jumbotrons = $("div.jumbotron");
+		for(var i=0; i<jumbotrons.size(); i++) {
+			var cls = (i%2)==1 ? "gerade" : "ungerade";
+			jumbotrons.eq(i).addClass(cls);
+		}
